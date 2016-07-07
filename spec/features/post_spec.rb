@@ -6,8 +6,10 @@ describe 'navigate' do
   end
 
   it 'shows the title on the show page in a h1 tag' do
+    @post = Post.create(title: "My Post", description: "My post desc")
     visit "/posts/#{@post.id}"
     expect(page).to have_css("h1", text: "My Post")
+
   end
 
   it 'to post pages' do
